@@ -1,14 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1 class="title">Posts index</h1>
 
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
     <p>
-      <%= link_to "Show this post", post %>
+      <%= link_to "Show this post", post, class:"button is-small" %>
     </p>
   <% end %>
 </div>
+<div id='mcs spacer' style="height: 10px;"></div>
+<%= link_to "New post", new_post_path, class:"button is-small" %>
 
-<%= link_to "New post", new_post_path %>

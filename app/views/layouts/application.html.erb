@@ -8,25 +8,31 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <%= render partial: "/layouts/header" %>
   </head>
 
   <body>
-  <%= render partial: "/layouts/header" %>
-   
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
    
   
     <% if current_user %>
       Logged in as: <%= current_user.email %> 
+      <br>
+      <%= button_to "Log out", destroy_user_session_url, method: :delete, data: {turbo: false } %>
+      <% else %>
+        Not logged in 
     <% end %>
 
 
    <section class="section">
      <div class="container">
-      <%= yield %> 
+  <%= yield %> 
     </div>
   </section>
 
   </body>
+  <footer>
+    <%= render partial: "/layouts/footer" %>
+  </footer>
 </html>
