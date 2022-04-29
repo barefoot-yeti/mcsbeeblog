@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Week5</title>
+    <title>Bee Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <%= render partial: "/layouts/header" %>
   </head>
 
   <body>
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
+   
+  
     <% if current_user %>
-      Hi <%= current_user.email %> 
-      <%= button_to "Log out", destroy_user_session_path, method: :delete, data: {turbo: false } %>
+      Logged in as: <%= current_user.email %> 
+      <br>
+      <%= button_to "Log out", destroy_user_session_url, method: :delete, data: {turbo: false } %>
+      <% else %>
+        Not logged in 
     <% end %>
-    <%= yield %>
+
+
+   <section class="section">
+     <div class="container">
+  <%= yield %> 
+    </div>
+  </section>
+
   </body>
+  <footer>
+    <%= render partial: "/layouts/footer" %>
+  </footer>
 </html>
