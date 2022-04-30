@@ -1,0 +1,10 @@
+<h1>Hey there is a new Post</h1>
+<%= image_tag attachments['newpost.png'].url, alt: 'My Photo' %>
+<br>
+From: <%= @user.email %> 
+<br>
+Title: <%= @post.title %>
+<br>
+<br>
+<%= @post.body %>
+
