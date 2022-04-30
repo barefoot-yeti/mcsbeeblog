@@ -11,7 +11,7 @@ class PostMailer < ApplicationMailer
     @greeting = "Hi"
     attachments['newpost.png'] = File.read('app/assets/images/newpost.png')
     mail(
-      from: "Support <support@tinyrails.com>",
+      from: "Support <mc.botha6@gmail.com>",
       to: User.all.pluck(:email),
       subject: "New post created"
     ) 
