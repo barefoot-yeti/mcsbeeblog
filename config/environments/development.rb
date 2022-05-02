@@ -45,25 +45,25 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   
   #letter opener for dev enviromoment
-  # config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :letter_opener
+  # config.action_mailer.perform_deliveries = true
   
-  # Amazon SES SMTP Config
-  # config.action_mailer.default_url_options = { host: 'Amazon SES' }
+  # # Amazon SES SMTP Config
+  # # config.action_mailer.default_url_options = { host: 'Amazon SES' }
 
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.delivery_method = :smtp
 
-  # Rails.application.credentials.dig(:ses, :username)
+  # # Rails.application.credentials.dig(:ses, :username)
 
-  config.action_mailer.smtp_settings = { 
-    address: 'email-smtp.us-east-1.amazonaws.com', 
-    user_name: Rails.application.credentials.dig(:ses, :username),
-    password: Rails.application.credentials.dig(:ses, :password),
-    port: '587',
-    authentication: 'login',
-    enable_starttls_auto: true
-  } 
+  # config.action_mailer.smtp_settings = { 
+  #   address: 'email-smtp.us-east-1.amazonaws.com', 
+  #   user_name: Rails.application.credentials.dig(:ses, :username),
+  #   password: Rails.application.credentials.dig(:ses, :password),
+  #   port: '587',
+  #   authentication: 'login',
+  #   enable_starttls_auto: true
+  # } 
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

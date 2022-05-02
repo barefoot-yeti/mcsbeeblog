@@ -70,8 +70,7 @@ Rails.application.configure do
   #devise stuff
   config.action_mailer.default_url_options = { :host => 'mcsbeeblog.heroku.com'}
   
-  #letter opener for dev enviromoment
-  config.action_mailer.perform_deliveries = false
+  config.action_mailer.perform_deliveries = true
     
  # Amazon SES SMTP Config
  # config.action_mailer.default_url_options = { host: 'Amazon SES' }
