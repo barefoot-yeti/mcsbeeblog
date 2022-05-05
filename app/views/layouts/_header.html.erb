@@ -1,6 +1,6 @@
 <nav class="navbar is-light" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="www.google.com">
+    <a class="navbar-item" href="/home">
       <img src="https://hisgames.org/images/logo/214/logo_tiny-rails.png" width="112" height="28">
     </a>
 
@@ -14,7 +14,7 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item">
-        Home
+        <%= link_to 'Home', root_path, class:'navbar-item' %>
       </a>
 
       <a class="navbar-item">
