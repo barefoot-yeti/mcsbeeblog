@@ -14,17 +14,17 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item">
-        <%= link_to 'Home', root_path, class:'navbar-item' %>
+        <%= link_to 'Home', home_index_url, class:'navbar-item' %>
       </a>
       
       
       <a class="navbar-item">
-        Today in History
+        <%= link_to 'Posts', posts_url, class:'navbar-item' %>
       </a>
       
       
       <a class="navbar-item">
-        <%= link_to 'About', about_path, class:'navbar-item' %>
+        <%= link_to 'About', about_index_url, class:'navbar-item' %>
       </a>
 
       </div>
@@ -33,11 +33,15 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            <strong> Log out</strong>
+          <% if current_user %>
+         <%= current_user.email %> 
+          <br>
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: false } %>
+          
+          <% else %>
+            Not logged in
+          <% end %>
+
           </a>
         </div>
       </div>
