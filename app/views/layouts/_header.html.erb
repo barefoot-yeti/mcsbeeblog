@@ -37,7 +37,7 @@
           <% if current_user %>
         <%= current_user.email %> 
         <div id='post spacer' style="width: 20px;"></div>
-          <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "button is-danger"  %>
+          <%= button_to "Logout", destroy_user_session_path, method: :delete, data: { turbo: false }, class: "button is-danger"  %>
           
           <% else %>
             Not logged in
