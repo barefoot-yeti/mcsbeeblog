@@ -8,17 +8,17 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <%= javascript_importmap_tags %>
-    <%= render partial: "/layouts/header" %>
   </head>
 
   <body>
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-
-   <section class="section">
-   <div class="container">
-   <%= yield %> 
+    <header>
+    <%= render partial: "/layouts/header" %>
+    <%= render partial: "/layouts/alerts" %>
+    </header>
+    <section class="section">
+     <div class="container">
     </div>
+    <%= yield %> 
   </section>
 
   </body>
